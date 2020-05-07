@@ -13,6 +13,11 @@
 
 // Remove Duplicates from Sorted Array
 int removeDuplicatesFromSortedArray(int A[], int n);
+int removeDuplicatesFromSortedArrayWithSTL(int A[], int n);
+
+// What if duplicates are allowed at most twice
+int duplicatesAtMostTwice00(int A[], int n);
+int duplicatesAtMostTwice01(int A[], int n);
 
 
 #endif /* AboutArray_hpp */
