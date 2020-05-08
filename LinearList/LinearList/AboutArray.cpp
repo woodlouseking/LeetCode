@@ -71,3 +71,78 @@ int duplicatesAtMostTwice01(int A[], int n)
     
     return index;
 }
+
+// Search in Rotated Sorted Array, No Duplicate exists in the array
+// 时间复杂度O(logN) 空间复杂度O(1)
+int SearchInRotatedSortedArray(int A[], int len, int target)
+{
+    int first = 0;
+    int last = len;
+    
+    while (first != last) {
+        int mid = (first + last) / 2;
+        if (A[mid] == target) {
+            return mid;
+        }
+        
+        // first和mid是一个连续的排序区间段
+        if (A[first] <= A[mid]) {
+            // target在first和mid的区间段，移动last
+            if (A[first]<=target && target<A[mid]) {
+                last = mid;
+            } else {
+                first = mid + 1;
+            }
+        }
+        else {
+            // mid和last是一个连续的排序区间段
+            if (A[mid]<target && target<=A[last-1]) {
+                // 移动first
+                first = mid + 1;
+            } else {
+                last = mid;
+            }
+        }
+    }
+    
+    return -1;
+}
+
+// Search in Rotated Sorted Array, Duplicate exists in the array
+// 时间复杂度O(N) 空间复杂度O(1)
+int searchInRotatedSortedArrayWithDuplicate(int A[], int len, int target)
+{
+    int first = 0;
+    int last = len;
+    
+    while (first != last) {
+        int mid = (first + last) / 2;
+        if (A[mid] == target) {
+            return mid;
+        }
+        if (A[first] < A[mid]) {
+            // first到mid之间是一个连续的排序区间段
+            if (A[first]<=target && target<A[mid]) {
+                // target在first和mid之间，移动Last
+                last = mid;
+            } else {
+                first = mid + 1;
+            }
+        }
+        else if(A[first] > A[mid]) {
+            // mid到last之间是一个连续的排序区间段
+            if (A[mid]<target && target<=A[last-1]) {
+                //target在mid和last之间,移动first
+                first = mid + 1;
+            } else {
+                last = mid;
+            }
+        }
+        else {
+            // first和mid相等，移动first
+            ++first;
+        }
+    }
+    
+    return -1;
+}

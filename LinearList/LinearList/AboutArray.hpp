@@ -19,5 +19,10 @@ int removeDuplicatesFromSortedArrayWithSTL(int A[], int n);
 int duplicatesAtMostTwice00(int A[], int n);
 int duplicatesAtMostTwice01(int A[], int n);
 
+// Search in Rotated Sorted Array, No Duplicate exists in the array
+int SearchInRotatedSortedArray(int A[], int len, int target);
+
+// Seart in Rotated Sorted Array, Duplicates exists in the array
+int searchInRotatedSortedArrayWithDuplicate(int A[], int len, int target);
 
 #endif /* AboutArray_hpp */
