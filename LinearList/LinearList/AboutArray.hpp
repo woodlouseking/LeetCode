@@ -25,4 +25,9 @@ int SearchInRotatedSortedArray(int A[], int len, int target);
 // Seart in Rotated Sorted Array, Duplicates exists in the array
 int searchInRotatedSortedArrayWithDuplicate(int A[], int len, int target);
 
+// Find the kth Element in two sorted array
+int findTheKthElementInTwoSortedArray00(int A[], int m, int B[], int n, int kth);
+int findTheKthElementInTwoSortedArray01(int A[], int m, int B[], int n, int kth);
+
+
 #endif /* AboutArray_hpp */

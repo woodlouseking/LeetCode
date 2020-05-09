@@ -57,13 +57,76 @@ void testSearchInRotatedSoredArrayWithDuplicate()
     std::cout<<"find 17 in array index ="<<index<<std::endl;
 }
 
+// test find the kth element in two sorted array
+void testFindTheKthEleInTwoSortedArray()
+{
+    const int m = 5;
+    const int n = 3;
+    
+    int A[m] = {1, 8, 9, 10, 45};
+    int B[n] = {3, 11, 20};
+    
+    int k = 2;
+    int res = findTheKthElementInTwoSortedArray00(A, m, B, n, k);
+    std::cout<<"find the "<<k<<"th val res ="<<res<<std::endl;
+    
+    k = 4;
+    res = findTheKthElementInTwoSortedArray00(A, m, B, n, k);
+    std::cout<<"find the "<<k<<"th val res ="<<res<<std::endl;
+    
+    k = 1;
+    res = findTheKthElementInTwoSortedArray00(A, m, B, n, k);
+    std::cout<<"find the "<<k<<"th val res ="<<res<<std::endl;
+    
+    k = 8;
+    res = findTheKthElementInTwoSortedArray00(A, m, B, n, k);
+    std::cout<<"find the "<<k<<"th val res ="<<res<<std::endl;
+    
+    k = 10;
+    res = findTheKthElementInTwoSortedArray00(A, m, B, n, k);
+    std::cout<<"find the "<<k<<"th val res ="<<res<<std::endl;
+}
+
+void testFindTheKthEleInTwoSortedArray01()
+{
+    const int m = 5;
+    const int n = 3;
+    
+    int A[m] = {1, 8, 9, 10, 45};
+    int B[n] = {3, 11, 20};
+    
+    int k = 2;
+    int res = findTheKthElementInTwoSortedArray01(A, m, B, n, k);
+    std::cout<<"find the "<<k<<"th val res ="<<res<<std::endl;
+    
+    k = 4;
+    res = findTheKthElementInTwoSortedArray01(A, m, B, n, k);
+    std::cout<<"find the "<<k<<"th val res ="<<res<<std::endl;
+    
+    k = 1;
+    res = findTheKthElementInTwoSortedArray01(A, m, B, n, k);
+    std::cout<<"find the "<<k<<"th val res ="<<res<<std::endl;
+    
+    k = 8;
+    res = findTheKthElementInTwoSortedArray01(A, m, B, n, k);
+    std::cout<<"find the "<<k<<"th val res ="<<res<<std::endl;
+    
+    k = 10;
+    res = findTheKthElementInTwoSortedArray01(A, m, B, n, k);
+    std::cout<<"find the "<<k<<"th val res ="<<res<<std::endl;
+}
+
 int main(int argc, const char * argv[]) {
     // insert code here...
     std::cout << "Hello, World!\n";
     
 //    testRemoveDuplicatesFromSortedArray();
 //    testSearchInRotatedSortedArray();
-    testSearchInRotatedSoredArrayWithDuplicate();
+//    testSearchInRotatedSoredArrayWithDuplicate();
+    
+//    testFindTheKthEleInTwoSortedArray();
+    testFindTheKthEleInTwoSortedArray01();
+    
     std::cout<<std::endl;
     return 0;
 }
