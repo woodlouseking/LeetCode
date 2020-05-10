@@ -261,3 +261,39 @@ int findTheLongestConsecutiveSequence(int A[], int n)
     
     return longestLen;
 }
+
+// find two sum
+//O(n*n) O(1)
+void findTwoSum00(int A[], int n, int target, int &index1, int &index2)
+{
+    index1 = index2 = -1;
+    for(int i=0; i<n-1; i++) {
+        for (int j=i+1; j<n; j++) {
+            if (A[i] + A[j] == target) {
+                index1 = i + 1;
+                index2 = j + 1;
+                break;
+            }
+        }
+        if (index2>0) {
+            break;
+        }
+    }
+}
+
+void findTwoSum01(int A[], int n, int target, int &index1, int &index2)
+{
+    index2 = index1 = -1;
+    std::unordered_map<int, int> cache;
+    for(int i=0; i<n; i++) {
+        int reduce = target - A[i];
+        auto iter = cache.find(reduce);
+        if (iter != cache.end()) {
+            index1 = (std::min(i, iter->second)) + 1;
+            index2 = (std::max(i, iter->second)) + 1;
+            break;
+        }
+        
+        cache[A[i]] = i;
+    }
+}

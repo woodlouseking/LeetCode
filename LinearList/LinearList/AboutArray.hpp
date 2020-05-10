@@ -31,4 +31,8 @@ int findTheKthElementInTwoSortedArray01(int A[], int m, int B[], int n, int kth)
 
 // Find the Longest Consecutive Sequence
 int findTheLongestConsecutiveSequence(int A[], int n);
+
+// Two Sum
+void findTwoSum00(int A[], int n, int target, int &index1, int &index2);
+void findTwoSum01(int A[], int n, int target, int &index1, int &index2);
 #endif /* AboutArray_hpp */

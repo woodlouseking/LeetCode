@@ -124,6 +124,24 @@ void findTheLongestSeq() {
     std::cout<<"Find the longest is = "<<res<<std::endl;
 }
 
+void testFindTwoSum() {
+    const int len = 4;
+    int A[len] = {2, 11, 15, 7};
+    int target = 9;
+    int res1 = -1;
+    int res2 = -1;
+    
+    findTwoSum00(A, len, target, res1, res2);
+    std::cout<<"find target by 00"<<target<<" index res1 = "<<res1<<" res2 = "<<res2<<std::endl;
+    
+    findTwoSum01(A, len, target, res1, res2);
+    std::cout<<"find target by 01 "<<target<<" index res1 = "<<res1<<" res2 = "<<res2<<std::endl;
+    
+    target = 10;
+    findTwoSum00(A, len, target, res1, res2);
+    std::cout<<"find target by 00"<<target<<" index res1 = "<<res1<<" res2 = "<<res2<<std::endl;
+}
+
 int main(int argc, const char * argv[]) {
     // insert code here...
     std::cout << "Hello, World!\n";
@@ -135,7 +153,8 @@ int main(int argc, const char * argv[]) {
 //    testFindTheKthEleInTwoSortedArray();
 //    testFindTheKthEleInTwoSortedArray01();
     
-    findTheLongestSeq();
+//    findTheLongestSeq();
+    testFindTwoSum();
     
     std::cout<<std::endl;
     return 0;
