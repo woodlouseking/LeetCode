@@ -29,5 +29,6 @@ int searchInRotatedSortedArrayWithDuplicate(int A[], int len, int target);
 int findTheKthElementInTwoSortedArray00(int A[], int m, int B[], int n, int kth);
 int findTheKthElementInTwoSortedArray01(int A[], int m, int B[], int n, int kth);
 
-
+// Find the Longest Consecutive Sequence
+int findTheLongestConsecutiveSequence(int A[], int n);
 #endif /* AboutArray_hpp */

@@ -7,6 +7,7 @@
 //
 
 #include <algorithm>
+#include <unordered_map>
 #include "AboutArray.hpp"
 
 //Remove Duplicates from Sorted Array
@@ -222,4 +223,41 @@ int findTheKthElementInTwoSortedArray01(int A[], int m, int B[], int n, int kth)
     }
     
     return A[ia-1];
+}
+
+// Find the Longest Consecutive Sequence
+int findTheLongestConsecutiveSequence(int A[], int n)
+{
+    std::unordered_map<int, bool> used;
+    
+    int longestLen = 0;
+    
+    for (int i=0; i<n; ++i) {
+        used[A[i]] = false;
+    }
+    
+    for(int i=0; i<n; i++) {
+        if (used[A[i]]) {
+            continue;
+        }
+        
+        int len = 1;
+        used[A[i]] = true;
+        
+        // 向右寻找数字
+        for (int j=A[i]+1; used.find(j)!=used.end(); j++) {
+            used[j] = true;
+            ++len;
+        }
+        
+        //向左寻找数组
+        for(int j=A[i]-1; used.find(j)!=used.end(); j--) {
+            used[j] = true;
+            ++len;
+        }
+        
+        longestLen = std::max(longestLen, len);
+    }
+    
+    return longestLen;
 }

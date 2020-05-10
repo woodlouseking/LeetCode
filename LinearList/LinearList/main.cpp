@@ -116,6 +116,14 @@ void testFindTheKthEleInTwoSortedArray01()
     std::cout<<"find the "<<k<<"th val res ="<<res<<std::endl;
 }
 
+void findTheLongestSeq() {
+    const int len = 7;
+    int A[len] = {100, 4, 200, 1, 3, 2, 5};
+    
+    int res = findTheLongestConsecutiveSequence(A, len);
+    std::cout<<"Find the longest is = "<<res<<std::endl;
+}
+
 int main(int argc, const char * argv[]) {
     // insert code here...
     std::cout << "Hello, World!\n";
@@ -125,7 +133,9 @@ int main(int argc, const char * argv[]) {
 //    testSearchInRotatedSoredArrayWithDuplicate();
     
 //    testFindTheKthEleInTwoSortedArray();
-    testFindTheKthEleInTwoSortedArray01();
+//    testFindTheKthEleInTwoSortedArray01();
+    
+    findTheLongestSeq();
     
     std::cout<<std::endl;
     return 0;
