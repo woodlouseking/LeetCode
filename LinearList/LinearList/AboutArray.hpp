@@ -10,6 +10,9 @@
 #define AboutArray_hpp
 
 #include <stdio.h>
+#include <vector>
+
+using namespace std;
 
 // Remove Duplicates from Sorted Array
 int removeDuplicatesFromSortedArray(int A[], int n);
@@ -35,4 +38,8 @@ int findTheLongestConsecutiveSequence(int A[], int n);
 // Two Sum
 void findTwoSum00(int A[], int n, int target, int &index1, int &index2);
 void findTwoSum01(int A[], int n, int target, int &index1, int &index2);
+
+// ThreeSum
+vector<vector<int>> threeSum(vector<int> &num);
+
 #endif /* AboutArray_hpp */

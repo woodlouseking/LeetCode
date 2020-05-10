@@ -142,6 +142,20 @@ void testFindTwoSum() {
     std::cout<<"find target by 00"<<target<<" index res1 = "<<res1<<" res2 = "<<res2<<std::endl;
 }
 
+void test3Sum() {
+    
+    vector<int> A{-1, 0, 1, 2, -1, -4};
+    
+    vector<vector<int>> result = threeSum(A);
+    for(int i=0; i<result.size(); i++) {
+        vector<int> val = result[i];
+        for(int j=0; j<val.size(); j++) {
+            cout<<" "<<val[j]<< " ";
+        }
+        cout<<endl;
+    }
+}
+
 int main(int argc, const char * argv[]) {
     // insert code here...
     std::cout << "Hello, World!\n";
@@ -154,7 +168,9 @@ int main(int argc, const char * argv[]) {
 //    testFindTheKthEleInTwoSortedArray01();
     
 //    findTheLongestSeq();
-    testFindTwoSum();
+//    testFindTwoSum();
+    
+    test3Sum();
     
     std::cout<<std::endl;
     return 0;
