@@ -163,6 +163,18 @@ void test3sumClosest() {
     cout<<"find closest to "<<target<<" is "<<res<<endl;
 }
 
+void testRemoveElement() {
+    const int len = 5;
+    int A[len] = {1, 2, 5, 7, 2};
+    int target = 2;
+    int newLen = removeElement(A, 5, target);
+    cout<<"new array len = "<<newLen<<"  elements is -> "<<endl;
+    for(int i=0; i<newLen; ++i) {
+        cout<<" "<<A[i];
+    }
+}
+
+
 int main(int argc, const char * argv[]) {
     // insert code here...
     std::cout << "Hello, World!\n";
@@ -179,7 +191,9 @@ int main(int argc, const char * argv[]) {
     
 //    test3Sum();
     
-    test3sumClosest();
+//    test3sumClosest();
+    
+    testRemoveElement();
     
     std::cout<<std::endl;
     return 0;

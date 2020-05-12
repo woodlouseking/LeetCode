@@ -45,4 +45,8 @@ vector<vector<int>> threeSum(vector<int> &num);
 // 3sum closest
 int threeSumColset(vector<int> &num, int target);
 
+// remove element
+int removeElement(int A[], int n, int target);
+
+
 #endif /* AboutArray_hpp */

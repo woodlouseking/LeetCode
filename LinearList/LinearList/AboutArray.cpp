@@ -360,3 +360,16 @@ int threeSumColset(vector<int> &num, int target)
     
     return result;
 }
+
+// 删除指定元素
+int removeElement(int A[], int n, int target)
+{
+    int index = 0;
+    for(int i=0; i<n; i++){
+        if (A[i] != target) {
+            A[index++] = A[i];
+        }
+    }
+    
+    return index;
+}
