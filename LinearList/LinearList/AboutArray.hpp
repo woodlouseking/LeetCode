@@ -48,5 +48,11 @@ int threeSumColset(vector<int> &num, int target);
 // remove element
 int removeElement(int A[], int n, int target);
 
+// Next Permutation
+void nextPermutation(int A[], int n);
+
+// all Permutation
+bool allPermutation(int A[], int n);
+
 
 #endif /* AboutArray_hpp */

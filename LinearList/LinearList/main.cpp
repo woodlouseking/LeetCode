@@ -175,6 +175,17 @@ void testRemoveElement() {
 }
 
 
+void testNextPermutation() {
+    const int len = 3;
+    int A[len] = {1, 2, 3};
+    nextPermutation(A, len);
+    cout<<"1 2 3 next -> ";
+    for(int i=0; i<len; i++) {
+        cout<<A[i]<<" ";
+    }
+}
+
+
 int main(int argc, const char * argv[]) {
     // insert code here...
     std::cout << "Hello, World!\n";
@@ -193,7 +204,9 @@ int main(int argc, const char * argv[]) {
     
 //    test3sumClosest();
     
-    testRemoveElement();
+//    testRemoveElement();
+    
+    testNextPermutation();
     
     std::cout<<std::endl;
     return 0;

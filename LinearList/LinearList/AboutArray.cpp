@@ -373,3 +373,90 @@ int removeElement(int A[], int n, int target)
     
     return index;
 }
+
+
+// Next Permutation
+void nextPermutation(int A[], int n)
+{
+    //从右向左找到第一个违反升序序列的index
+    int violateIdx = -1;
+    for(int i=n-1; i>0; --i) {
+        if (A[i] > A[i-1]) {
+            violateIdx = i - 1;
+            break;
+        }
+    }
+    
+    if (violateIdx != -1) {
+        // 从右向左查找第一个大于violateIdx值的索引
+        int firstBiggerThanViolateIdx = n-1;
+        for(int i=n-1; i>=0; --i) {
+            if (A[i] > A[violateIdx]) {
+                firstBiggerThanViolateIdx = i;
+                break;
+            }
+        }
+        
+        //交换violateIdx 和 firstBiggerThanviolateIdx
+        int temp = A[violateIdx];
+        A[violateIdx] = A[firstBiggerThanViolateIdx];
+        A[firstBiggerThanViolateIdx] = temp;
+    }
+    
+    // 逆序元素
+    int i = violateIdx + 1;
+    int j = n - 1;
+    while (i < j) {
+        int tmp = A[i];
+        A[i] = A[j];
+        A[j] = tmp;
+        ++i;
+        --j;
+    }
+}
+
+
+// all Permutation
+bool allPermutation(int A[], int n)
+{
+    //从右向左找到第一个违反升序序列的index
+    int violateIdx = -1;
+    for(int i=n-1; i>0; --i) {
+        if (A[i] > A[i-1]) {
+            violateIdx = i - 1;
+            break;
+        }
+    }
+    
+    if (violateIdx == -1) {
+        // 已是最后一个排列
+        return false;
+    }
+    
+    // 从右向左查找第一个大于violateIdx值的索引
+    int firstBiggerThanViolateIdx = n-1;
+    for(int i=n-1; i>=0; --i) {
+        if (A[i] > A[violateIdx]) {
+            firstBiggerThanViolateIdx = i;
+            break;
+        }
+    }
+    
+    //交换violateIdx 和 firstBiggerThanviolateIdx
+    int temp = A[violateIdx];
+    A[violateIdx] = A[firstBiggerThanViolateIdx];
+    A[firstBiggerThanViolateIdx] = temp;
+    
+    // 逆序元素
+    int i = violateIdx + 1;
+    int j = n - 1;
+    while (i < j) {
+        int tmp = A[i];
+        A[i] = A[j];
+        A[j] = tmp;
+        ++i;
+        --j;
+    }
+    
+    return true;
+}
