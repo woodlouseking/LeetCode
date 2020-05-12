@@ -42,4 +42,7 @@ void findTwoSum01(int A[], int n, int target, int &index1, int &index2);
 // ThreeSum
 vector<vector<int>> threeSum(vector<int> &num);
 
+// 3sum closest
+int threeSumColset(vector<int> &num, int target);
+
 #endif /* AboutArray_hpp */

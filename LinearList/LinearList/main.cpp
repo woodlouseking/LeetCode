@@ -156,6 +156,13 @@ void test3Sum() {
     }
 }
 
+void test3sumClosest() {
+    vector<int> num{-1, 2, 1, -4};
+    int target = 1;
+    int res = threeSumColset(num, 1);
+    cout<<"find closest to "<<target<<" is "<<res<<endl;
+}
+
 int main(int argc, const char * argv[]) {
     // insert code here...
     std::cout << "Hello, World!\n";
@@ -170,7 +177,9 @@ int main(int argc, const char * argv[]) {
 //    findTheLongestSeq();
 //    testFindTwoSum();
     
-    test3Sum();
+//    test3Sum();
+    
+    test3sumClosest();
     
     std::cout<<std::endl;
     return 0;

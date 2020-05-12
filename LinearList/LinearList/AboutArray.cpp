@@ -329,3 +329,34 @@ vector<vector<int>> threeSum(vector<int> &num)
     result.erase(unique(result.begin(), result.end()), result.end());
     return result;
 }
+
+
+// 3sum closest
+// O(n2)
+int threeSumColset(vector<int> &num, int target)
+{
+    int result = INT_MAX;
+    int gap = INT_MAX;
+    sort(num.begin(), num.end());
+    
+    for (auto a=num.begin(); a!=prev(num.end(), 2); ++a) {
+        auto b = next(a);
+        auto c = prev(num.end());
+        
+        while (b < c) {
+            int sum = *a + *b + *c;
+            int curGap = abs(sum - target);
+            if (curGap < gap) {
+                gap = curGap;
+                result = sum;
+            }
+            if (sum < target) {
+                ++b;
+            } else {
+                --c;
+            }
+        }
+    }
+    
+    return result;
+}
