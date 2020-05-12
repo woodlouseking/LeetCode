@@ -185,6 +185,19 @@ void testNextPermutation() {
     }
 }
 
+// 第k个排列
+void testKthPermutation() {
+    int n = 3;
+    vector<int> s(n);
+    for (int i=0; i<n; ++i) {
+        s[i] = (i+1);
+    }
+    vector<int> res = kthPermutation01(s, 1);
+    for (int i=0; i<n; ++i) {
+        cout<<res[i]<< " ";
+    }
+    cout<<endl;
+}
 
 int main(int argc, const char * argv[]) {
     // insert code here...
@@ -206,7 +219,9 @@ int main(int argc, const char * argv[]) {
     
 //    testRemoveElement();
     
-    testNextPermutation();
+//    testNextPermutation();
+    
+    testKthPermutation();
     
     std::cout<<std::endl;
     return 0;

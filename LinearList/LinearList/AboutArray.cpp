@@ -460,3 +460,32 @@ bool allPermutation(int A[], int n)
     
     return true;
 }
+
+int factorial(int n) {
+    int result = 1;
+    for(int i=1; i<=n; i++) {
+        result *= i;
+    }
+    
+    return result;
+}
+
+vector<int> kthPermutation(const vector<int>&num, int k)
+{
+    int n = num.size();
+    vector<int> S(num);
+    vector<int> result;
+    
+    int base = factorial(n - 1);
+    --k;
+    
+    for (int i=n-1; i>0; k%=base, base/=i, --i) {
+        auto a = next(S.begin(), k/base);
+        result.push_back(*a);
+        S.erase(a);
+    }
+    
+    result.push_back(S[0]);
+    
+    return result;
+}

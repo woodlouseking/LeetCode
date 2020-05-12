@@ -54,5 +54,9 @@ void nextPermutation(int A[], int n);
 // all Permutation
 bool allPermutation(int A[], int n);
 
+// Permutation Sequence
+int factorial(int n);
+vector<int> kthPermutation01(const vector<int>&num, int k);
+
 
 #endif /* AboutArray_hpp */
