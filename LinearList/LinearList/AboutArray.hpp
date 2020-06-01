@@ -58,5 +58,23 @@ bool allPermutation(int A[], int n);
 int factorial(int n);
 vector<int> kthPermutation01(const vector<int>&num, int k);
 
+// List Node
+struct ListNode {
+    int val;
+    ListNode *next;
+    ListNode(int x):
+    val(x),
+    next(nullptr) {
+        
+    }
+};
+
+//reverse list
+ListNode* reverseList(ListNode *head);
+
+//reverse list
+//void reverseListM2N(ListNode *head, int m, int n);
+ListNode* reverseListM2N(ListNode *head, int m, int n);
+
 
 #endif /* AboutArray_hpp */

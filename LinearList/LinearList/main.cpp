@@ -199,6 +199,54 @@ void testKthPermutation() {
     cout<<endl;
 }
 
+void showList(ListNode *pHead) {
+    ListNode *pCur = pHead;
+    while (pCur) {
+        cout<<pCur->val<<" ";
+        pCur = pCur->next;
+    }
+    
+    cout<<endl;
+}
+
+void testReverse() {
+    ListNode head(1);
+    ListNode *pCur = &head;
+    for(int i=2; i<=10; i++) {
+        ListNode *p = new ListNode(i);
+        pCur->next = p;
+        pCur = p;
+    }
+    
+    cout<<"Init List : " <<endl;
+    showList(&head);
+    
+    
+    ListNode* pReverseHead = reverseList(&head);
+    cout<<"Reverse List : " <<endl;
+    showList(pReverseHead);
+    
+};
+
+void testReverseM2N() {
+    ListNode head(1);
+    ListNode *pCur = &head;
+    for(int i=2; i<=10; i++) {
+        ListNode *p = new ListNode(i);
+        pCur->next = p;
+        pCur = p;
+    }
+    
+    cout<<"Init List : " <<endl;
+    showList(&head);
+    
+    
+    ListNode *result = reverseListM2N(&head, 2, 9);
+    cout<<"Reverse List : " <<endl;
+    showList(result);
+    
+};
+
 int main(int argc, const char * argv[]) {
     // insert code here...
     std::cout << "Hello, World!\n";
@@ -221,7 +269,10 @@ int main(int argc, const char * argv[]) {
     
 //    testNextPermutation();
     
-    testKthPermutation();
+//    testKthPermutation();
+    
+    //    testReverse();
+    testReverseM2N();
     
     std::cout<<std::endl;
     return 0;

@@ -470,7 +470,7 @@ int factorial(int n) {
     return result;
 }
 
-vector<int> kthPermutation(const vector<int>&num, int k)
+vector<int> kthPermutation01(const vector<int>&num, int k)
 {
     int n = num.size();
     vector<int> S(num);
@@ -488,4 +488,64 @@ vector<int> kthPermutation(const vector<int>&num, int k)
     result.push_back(S[0]);
     
     return result;
+}
+
+//reverse list
+ListNode* reverseList(ListNode *head)
+{
+    // 设置一个新的头指针指向NULL
+    ListNode *pHead2 = nullptr;
+    
+    //指定两个指针，初始值一个指向原始链表的头节点，另一个指向头节点的下一个节点
+    ListNode *pCur = head;
+    ListNode *pNext = pCur->next;
+    
+    // 开始拆解原来的链表
+    // pCur节点插入到pHead2节点前，pCur->next = pHead2;
+    // 设置pCur为最新的头节点 , pHead2 = pCur;
+    // 重置当前要操作的节点 pCur = pNext;
+    // 移动下一个要操作的节点 pNext = pNext==nullptr ? nullptr : pNext->next
+    
+    while (pCur) {
+        pCur->next = pHead2;
+        pHead2 = pCur;
+        pCur = pNext;
+        pNext = pNext==nullptr ? nullptr : pNext->next;
+    }
+    
+    return pHead2;
+}
+
+//reverse list m2n
+ListNode* reverseListM2N(ListNode *head, int m, int n)
+{
+    //需要的变量
+    ListNode resultNode(0);
+    resultNode.next = head;
+    
+    //第m个节点
+    ListNode *pNodeM = head;
+    ListNode *pNodeBeforeM = nullptr;
+    
+    for(int i=1; i<m; i++) {
+        pNodeBeforeM = pNodeM;
+        pNodeM = pNodeM->next;
+    }
+    
+    //逆置节点
+    ListNode *pHeadTmp = nullptr;
+    ListNode *pCur = pNodeM;
+    for (int i=0; i<(n-m)+1 && pCur; i++) {
+        ListNode *pNext = pCur->next;
+        pCur->next = pHeadTmp;
+        pHeadTmp = pCur;
+        pCur = pNext;
+    }
+    
+    if (pNodeBeforeM) {
+        pNodeBeforeM->next = pHeadTmp;
+    }
+    pNodeM->next = pCur;
+    
+    return m==1 ? pHeadTmp : resultNode.next;
 }
