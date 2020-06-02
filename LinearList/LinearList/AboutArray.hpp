@@ -79,5 +79,8 @@ ListNode* reverseListM2N(ListNode *head, int m, int n);
 // Partition List
 ListNode* partition(ListNode* head, int x);
 
+// Remove Duplicates from Sorted List
+ListNode *removeDuplicatesFromSortedList(ListNode *head);
+ListNode *removeDuplicatesFromSortedListUseRecursion(ListNode *head);
 
 #endif /* AboutArray_hpp */

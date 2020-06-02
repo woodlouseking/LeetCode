@@ -271,6 +271,32 @@ void testPartitionList()
     showList(result);
 }
 
+void testRemoveAllDuplicatesFromStoredList()
+{
+    ListNode *head = new ListNode(1);
+    ListNode *v1 = new ListNode(2);
+    ListNode *v2 = new ListNode(3);
+    ListNode *v3 = new ListNode(3);
+    ListNode *v4 = new ListNode(4);
+    ListNode *v5 = new ListNode(4);
+    ListNode *v6 = new ListNode(5);
+    head->next = v1;
+    v1->next = v2;
+    v2->next = v3;
+    v3->next = v4;
+    v4->next = v5;
+    v5->next = v6;
+    
+    cout<<"Init List:"<<endl;
+    showList(head);
+    
+    head = removeAllDuplicatesFromSortedList(head);
+    cout<<"Afer remove:"<<endl;
+    showList(head);
+    
+    freeList(head);
+}
+
 int main(int argc, const char * argv[]) {
     // insert code here...
     std::cout << "Hello, World!\n";
@@ -298,7 +324,9 @@ int main(int argc, const char * argv[]) {
     //    testReverse();
 //    testReverseM2N();
     
-    testPartitionList();
+//    testPartitionList();
+    
+    testRemoveAllDuplicatesFromStoredList();
     
     std::cout<<std::endl;
     return 0;

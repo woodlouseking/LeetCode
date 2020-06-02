@@ -574,3 +574,40 @@ ListNode* partition(ListNode* head, int x)
     
     return hLeft.next;
 }
+
+// Remove Duplicates from Sorted list
+ListNode *removeDuplicatesFromSortedList(ListNode *head)
+{
+    ListNode *pCur = head;
+    while (pCur->next) {
+        ListNode *pNext = pCur->next;
+        if (pNext->val == pCur->val) {
+            //处理相等的元素
+            pCur->next = pNext->next;
+            delete pNext;
+            continue;
+        }
+        
+        // 处理不相等的情况
+        pCur = pNext;
+    }
+    return head;
+}
+
+ListNode *removeDuplicatesFromSortedListUseRecursion(ListNode *head)
+{
+    if (!head->next) {
+        return head;
+    }
+    ListNode *next = head->next;
+    
+    // 不相等
+    if (next->val != head->val) {
+        return removeDuplicatesFromSortedListUseRecursion(head->next);
+    }
+    
+    // 相等
+    head->next = next->next;
+    delete next;
+    return removeDuplicatesFromSortedListUseRecursion(head);
+}
