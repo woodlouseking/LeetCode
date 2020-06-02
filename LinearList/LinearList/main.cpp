@@ -247,6 +247,30 @@ void testReverseM2N() {
     
 };
 
+void testPartitionList()
+{
+    ListNode head(1);
+    ListNode val1(4);
+    ListNode val2(3);
+    ListNode val3(2);
+    ListNode val4(5);
+    ListNode val5(2);
+    
+    head.next = &val1;
+    val1.next = &val2;
+    val2.next = &val3;
+    val3.next = &val4;
+    val4.next = &val5;
+    val5.next = nullptr;
+    cout<<"Init list"<<endl;
+    showList(&head);
+    
+    int val = 3;
+    ListNode *result = partition(&head, val);
+    cout<<"partition list with value "<<val<<endl;
+    showList(result);
+}
+
 int main(int argc, const char * argv[]) {
     // insert code here...
     std::cout << "Hello, World!\n";
@@ -272,7 +296,9 @@ int main(int argc, const char * argv[]) {
 //    testKthPermutation();
     
     //    testReverse();
-    testReverseM2N();
+//    testReverseM2N();
+    
+    testPartitionList();
     
     std::cout<<std::endl;
     return 0;

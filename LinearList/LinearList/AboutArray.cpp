@@ -549,3 +549,28 @@ ListNode* reverseListM2N(ListNode *head, int m, int n)
     
     return m==1 ? pHeadTmp : resultNode.next;
 }
+
+//partition list by value x
+ListNode* partition(ListNode* head, int x)
+{
+    ListNode hLeft(-1);
+    ListNode hRight(-1);
+    
+    ListNode *pCurLeft = &hLeft;
+    ListNode *pCurRight = &hRight;
+    
+    for(ListNode *cur=head; cur; cur=cur->next) {
+        if (cur->val < x) {
+            pCurLeft->next = cur;
+            pCurLeft = cur;
+        }
+        else {
+            pCurRight->next = cur;
+            pCurRight = cur;
+        }
+    }
+    pCurLeft->next = hRight.next;
+    pCurRight->next = nullptr;
+    
+    return hLeft.next;
+}

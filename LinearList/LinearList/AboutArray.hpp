@@ -76,5 +76,8 @@ ListNode* reverseList(ListNode *head);
 //void reverseListM2N(ListNode *head, int m, int n);
 ListNode* reverseListM2N(ListNode *head, int m, int n);
 
+// Partition List
+ListNode* partition(ListNode* head, int x);
+
 
 #endif /* AboutArray_hpp */
